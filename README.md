@@ -1,12 +1,11 @@
-# Relat-rio-QoS-Redes-De-Computadores-II---Augusto-Kawashima
 # Relatório de Laboratório: Qualidade de Serviço (QoS) - A Otimização da Jornada dos Pacotes
 
 **Disciplina:** Redes de Computadores II
 **Professora:** Angelita Rettore de Araujo
 
-**Nome do Aluno:** [Augusto Dorador Kawashima]
+**Nome do Aluno:** [Seu Nome Completo]
 
-**Turma:** [Ciência da Computação 6 Fase]
+**Turma:** [Sua Turma]
 
 ---
 
@@ -44,7 +43,8 @@ Os principais objetivos deste laboratório são:
 
 **Entrega:** Captura de tela do `qos_base.tcl` no editor de texto.
 ```
-#```
+# [INSERIR CAPTURA DE TELA DO qos_base.tcl AQUI]
+```
 
 ### **4.2. Configuração Inicial do Wireshark**
 
@@ -52,7 +52,7 @@ Os principais objetivos deste laboratório são:
 
 **Entrega:** Captura de tela do Wireshark com a interface de captura selecionada.
 ```
-# []
+# [INSERIR CAPTURA DE TELA DO WIRESHARK COM INTERFACE SELECIONADA AQUI]
 ```
 
 ---
@@ -67,8 +67,7 @@ Os principais objetivos deste laboratório são:
 
 **Entrega:** O código `lab_latencia.tcl` utilizado.
 ```tcl
-
-# []
+# [INSERIR CÓDIGO DO lab_latencia.tcl AQUI]
 ```
 
 ### **5.2. Análise da Latência no Arquivo de Trace (.tr)**
@@ -77,26 +76,25 @@ Os principais objetivos deste laboratório são:
 
 **Entrega:** Trecho do arquivo `.tr` destacando um pacote enviado e seu respectivo recebimento.
 ```
-# [+ 0.5 0 1 cbr 1000 ------- 0 0.0 1.0 0 0
-r 0.608 0 1 cbr 1000 ------- 0 0.0 1.0 0 0)]
+# [INSERIR TRECHO DO ARQUIVO .tr AQUI (EX: + 0.5 ... e r 0.618 ...)]
 ```
 
 **Cálculos da Latência:**
 
 | `link_delay` Configurado | Timestamp Envio | Timestamp Recebimento | Latência Calculada |
 | :----------------------- | :-------------- | :-------------------- | :----------------- |
-| [(10ms)]   | [0.5s]         | [0.518s]               | [18ms]        |
-| [(100ms)]  | [0.5s]         | [0.608s]               | [108ms]        |
-| [(500ms)]  | [0.5]         | [1.008s]               | [508ms]        |
+| [Valor 1 (e.g., 10ms)]   | [Valor]         | [Valor]               | [Resultado]        |
+| [Valor 2 (e.g., 100ms)]  | [Valor]         | [Valor]               | [Resultado]        |
+| [Valor 3 (e.g., 500ms)]  | [Valor]         | [Valor]               | [Resultado]        |
 
 ### **5.3. Perguntas para Refletir e Discutir**
 
 1.  **Qual a relação entre o `link_delay` configurado no script e a latência medida no arquivo `.tr`?**
-    *   [A latência na qual foi medida no arquivo .tr é a latência total de ponta a ponta que o pacote leva para percorrer a viagem da origem ao destino. Ela é diretamente influenciada pelo link_delay, onde é configurado manualmente no NS2. O valor de lonk_delay é a principal causa da latência, e o valor calculado no trace file, seria a soma desse atraso com um tempo(pequeno) adicionado de processamento dos nós e serialização, portanto a latència medida é sempre maior que o link_delay, mas a sua relação entre eles é diretamente proporcional.]
+    *   [Sua Resposta Aqui]
 2.  **Como a latência afeta a percepção do usuário em aplicações como VoIP ou jogos online?**
-    *   [Em relação a comunicação em tempo real, a latência é um fator crítico Em utilizar o VoIP, com um atraso alto(Acima de 150ms) pode causar a sensação da voz de robô, conversas sobrepostas e dificuldade na comunicação fluida. Já nos jogos online, a latência afeta a resposta dos comandos do jogador, criando um atraso perceptível entra a ação e o resultado do jogador, na qual prejudica a experiência e a jogabilidade.]
+    *   [Sua Resposta Aqui]
 3.  **Se o Dr. Martinez estivesse em Tóquio e o paciente em Manaus, qual seria o impacto na latência?**
-    *   [A distância entre Tóquio e Manau é de mais de 17.000km, onde nesse cenário, o tempo de propagação do sinal, que é maior que a latência em longas distâncias, seria significativamente maior. Para uma telecirurgia, que exige uma precisão de milissegundos, essa latência elevada, irá tornar o procedimento extremamente arriscado e acabaria sendo inviável.]
+    *   [Sua Resposta Aqui]
 
 ---
 
@@ -114,15 +112,15 @@ r 0.608 0 1 cbr 1000 ------- 0 0.0 1.0 0 0)]
 
 1.  Captura de tela do Wireshark mostrando a captura inicial de pacotes.
     ```
-    # 
+    # [INSERIR CAPTURA DE TELA DA CAPTURA INICIAL AQUI]
     ```
 2.  Captura de tela do Wireshark mostrando o filtro `rtcp` aplicado.
     ```
-    # []
+    # [INSERIR CAPTURA DE TELA DO FILTRO RTCP APLICADO AQUI]
     ```
 3.  Captura de tela dos detalhes de um pacote **Receiver Report (RR)**, com os campos `Fraction Lost`, `Cumulative Number of Packets Lost` e `Interarrival Jitter` claramente visíveis.
     ```
-    # []
+    # [INSERIR CAPTURA DE TELA DOS DETALHES DO PACOTE RR AQUI]
     ```
 
 **Valores Observados:**
@@ -236,4 +234,3 @@ r 0.608 0 1 cbr 1000 ------- 0 0.0 1.0 0 0)]
 *   Converta este arquivo Markdown para PDF para a entrega final, garantindo que todas as imagens e formatações estejam corretas.
 
 ---
-
