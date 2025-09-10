@@ -135,6 +135,8 @@ r 0.608 0 1 cbr 1000 ------- 0 0.0 1.0 0 0)]
     ```
 <img width="1094" height="440" alt="Captura de tela_2025-09-10_08-38-40" src="https://github.com/user-attachments/assets/91fc528b-04a4-4226-93ef-71771c2df7bf" />
 
+* Observação: O valor negativo o campo Cumulative Number of Packets Lost é um erro de interpretação do Wireshark devido à criptografia dos pacotes
+
 **Valores Observados:**
 
 *   **Interarrival Jitter:** [2317.346] ms
@@ -144,9 +146,11 @@ r 0.608 0 1 cbr 1000 ------- 0 0.0 1.0 0 0)]
 ### **6.2. Perguntas para Refletir e Discutir**
 
 1.  **Como esses valores de Jitter e Fraction Lost se comparam aos limites aceitáveis para uma boa qualidade de voz/vídeo (ex: jitter idealmente abaixo de 30ms, perda abaixo de 1%)?**
-    *   [Sua Resposta Aqui]
+    *   O jitter observado, foi de aproximadamente 2317 ms, onde é muito alto. Ele está mais de 70 vezes acima do limite aceitável de 30ms para uma boa qualidade de voz/video, na qual resultaria em uma experiência de comunicação totalmente inutilizável, com voz de robô e a imagem travando constantemente.
+    *   Já o Fraction Lost de 242/256 representa uma taxa de perda de mais de 94%. Este valor acaba sendo extrwemamente elevado, comparado com a taxa aceitável de menos 1% para o VoIP e 3% para streaming de vídeo. Uma perda de pacotes tão alta, acaba significando que a maior parte dos dados não está chegando ao destino, onde impossivilita qualquer comununicação em tempo real.
 2.  **Por que o RTCP é essencial para aplicações em tempo real, mesmo que o RTP (dados de mídia) esteja criptografado?**
-    *   [Sua Resposta Aqui]
+    *   o RTP é o protocolo que transporta os dados de midia em tempo real(video e audio), e ele é criptografado para garantir a privacidade e segurança da comunicação.
+    *   o RTCP é um protocolo complementar que funciona como um "termômetro da rede", onde acaba transportando relatórios de qualidade sobre o que está acontecendo com o fluxo de dados. Ele é essencial porque a aplicação precisa saber se a rede está funcionando bem, mesmo quando o conteúdo da chamada esteja criptografado.
 3.  **Como as informações de jitter e perda de pacotes reportadas pelo RTCP podem ser usadas pela aplicação (Google Meet) para ajustar a qualidade da transmissão?**
     *   [Sua Resposta Aqui]
 
