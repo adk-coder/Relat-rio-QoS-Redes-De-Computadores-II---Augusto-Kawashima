@@ -56,6 +56,7 @@ Os principais objetivos deste laboratório são:
 ```
 # [INSERIR CAPTURA DE TELA DO WIRESHARK COM INTERFACE SELECIONADA AQUI]
 ```
+<img width="1031" height="579" alt="Captura de tela_2025-09-10_08-22-47" src="https://github.com/user-attachments/assets/d92738c5-7643-4fd4-b044-b0ee7618d1bd" />
 
 ---
 
@@ -71,6 +72,9 @@ Os principais objetivos deste laboratório são:
 ```tcl
 # [INSERIR CÓDIGO DO lab_latencia.tcl AQUI]
 ```
+<img width="837" height="643" alt="Captura de tela_2025-09-10_08-31-42" src="https://github.com/user-attachments/assets/b65df53a-a24e-46ed-8aa7-320e366ca52b" />
+<img width="737" height="689" alt="Captura de tela_2025-09-10_08-32-40" src="https://github.com/user-attachments/assets/39977842-ddba-4e9e-98d6-3f9d5f537ef6" />
+
 
 ### **5.2. Análise da Latência no Arquivo de Trace (.tr)**
 
@@ -78,25 +82,26 @@ Os principais objetivos deste laboratório são:
 
 **Entrega:** Trecho do arquivo `.tr` destacando um pacote enviado e seu respectivo recebimento.
 ```
-# [INSERIR TRECHO DO ARQUIVO .tr AQUI (EX: + 0.5 ... e r 0.618 ...)]
+# [+ 0.5 0 1 cbr 1000 ------- 0 0.0 1.0 0 0
+r 0.608 0 1 cbr 1000 ------- 0 0.0 1.0 0 0)]
 ```
 
 **Cálculos da Latência:**
 
 | `link_delay` Configurado | Timestamp Envio | Timestamp Recebimento | Latência Calculada |
 | :----------------------- | :-------------- | :-------------------- | :----------------- |
-| [Valor 1 (e.g., 10ms)]   | [Valor]         | [Valor]               | [Resultado]        |
-| [Valor 2 (e.g., 100ms)]  | [Valor]         | [Valor]               | [Resultado]        |
-| [Valor 3 (e.g., 500ms)]  | [Valor]         | [Valor]               | [Resultado]        |
+| [Valor 1 (e.g., 10ms)]   | [0.5s]          | [0.518s]              | [18ms]             |
+| [Valor 2 (e.g., 100ms)]  | [0.5s]          | [0.608s]              | [108ms]            |
+| [Valor 3 (e.g., 500ms)]  | [0.5s]          | [1.008s]              | [508ms]            |
 
 ### **5.3. Perguntas para Refletir e Discutir**
 
 1.  **Qual a relação entre o `link_delay` configurado no script e a latência medida no arquivo `.tr`?**
-    *   [Sua Resposta Aqui]
+    *   [A latência na qual foi medida no arquivo .tr é a latência total de ponta a ponta que o pacote leva para percorrer a viagem da origem ao destino. Ela é diretamente influenciada pelo link_delay, onde é configurado manualmente no NS2. O valor de lonk_delay é a principal causa da latência, e o valor calculado no trace file, seria a soma desse atraso com um tempo(pequeno) adicionado de processamento dos nós e serialização, portanto a latència medida é sempre maior que o link_delay, mas a sua relação entre eles é diretamente proporcional.]
 2.  **Como a latência afeta a percepção do usuário em aplicações como VoIP ou jogos online?**
-    *   [Sua Resposta Aqui]
+    *   [Em relação a comunicação em tempo real, a latência é um fator crítico Em utilizar o VoIP, com um atraso alto(Acima de 150ms) pode causar a sensação da voz de robô, conversas sobrepostas e dificuldade na comunicação fluida. Já nos jogos online, a latência afeta a resposta dos comandos do jogador, criando um atraso perceptível entra a ação e o resultado do jogador, na qual prejudica a experiência e a jogabilidade.]
 3.  **Se o Dr. Martinez estivesse em Tóquio e o paciente em Manaus, qual seria o impacto na latência?**
-    *   [Sua Resposta Aqui]
+    *   [A distância entre Tóquio e Manau é de mais de 17.000km, onde nesse cenário, o tempo de propagação do sinal, que é maior que a latência em longas distâncias, seria significativamente maior. Para uma telecirurgia, que exige uma precisão de milissegundos, essa latência elevada, irá tornar o procedimento extremamente arriscado e acabaria sendo inviável.]
 
 ---
 
@@ -116,20 +121,25 @@ Os principais objetivos deste laboratório são:
     ```
     # [INSERIR CAPTURA DE TELA DA CAPTURA INICIAL AQUI]
     ```
+    <img width="1031" height="579" alt="Captura de tela_2025-09-10_08-22-47" src="https://github.com/user-attachments/assets/e93e241c-c493-4db9-8d2c-398c2ab7f920" />
+
 2.  Captura de tela do Wireshark mostrando o filtro `rtcp` aplicado.
     ```
     # [INSERIR CAPTURA DE TELA DO FILTRO RTCP APLICADO AQUI]
     ```
+    <img width="1030" height="419" alt="Captura de tela_2025-09-10_08-37-50" src="https://github.com/user-attachments/assets/9c9de2a8-f7d6-4578-9bf8-bb4fe3d5f525" />
+
 3.  Captura de tela dos detalhes de um pacote **Receiver Report (RR)**, com os campos `Fraction Lost`, `Cumulative Number of Packets Lost` e `Interarrival Jitter` claramente visíveis.
     ```
     # [INSERIR CAPTURA DE TELA DOS DETALHES DO PACOTE RR AQUI]
     ```
+<img width="1094" height="440" alt="Captura de tela_2025-09-10_08-38-40" src="https://github.com/user-attachments/assets/91fc528b-04a4-4226-93ef-71771c2df7bf" />
 
 **Valores Observados:**
 
-*   **Interarrival Jitter:** [Valor Observado] ms
-*   **Fraction Lost:** [Valor Observado] (ou % se convertido)
-*   **Cumulative Number of Packets Lost:** [Valor Observado]
+*   **Interarrival Jitter:** [2317.346] ms
+*   **Fraction Lost:** [242 / 256] (ou % se convertido)
+*   **Cumulative Number of Packets Lost:** [-2204580]
 
 ### **6.2. Perguntas para Refletir e Discutir**
 
