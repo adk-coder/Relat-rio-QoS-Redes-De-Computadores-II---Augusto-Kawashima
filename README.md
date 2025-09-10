@@ -3,9 +3,9 @@
 **Disciplina:** Redes de Computadores II
 **Professora:** Angelita Rettore de Araujo
 
-**Nome do Aluno:** [Seu Nome Completo]
+**Nome do Aluno:** Augusto Dorador Kawashima
 
-**Turma:** [Sua Turma]
+**Turma:** 6 Fase
 
 ---
 
@@ -44,6 +44,8 @@ Os principais objetivos deste laboratório são:
 **Entrega:** Captura de tela do `qos_base.tcl` no editor de texto.
 ```
 # [INSERIR CAPTURA DE TELA DO qos_base.tcl AQUI]
+<img width="601" height="631" alt="Captura de tela_2025-09-10_08-02-59" src="https://github.com/user-attachments/assets/0f4d53f9-27cf-4fc6-9c02-4be1c9d26214" />
+
 ```
 
 ### **4.2. Configuração Inicial do Wireshark**
