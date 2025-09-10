@@ -138,8 +138,8 @@ r 0.608 0 1 cbr 1000 ------- 0 0.0 1.0 0 0)]
 **Valores Observados:**
 
 *   **Interarrival Jitter:** [2317.346] ms
-*   **Fraction Lost:** [242 / 256] (ou % se convertido)
-*   **Cumulative Number of Packets Lost:** [-2204580]
+*   **Fraction Lost:** [242 / 256]
+*   **Cumulative Number of Packets Lost:** [2204580]
 
 ### **6.2. Perguntas para Refletir e Discutir**
 
